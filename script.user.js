@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Search Result Utils
 // @namespace    https://github.com/tlan16/google-search-result-utils
-// @version      1.0.0
+// @version      1.0.1
 // @description  Modifies google search result links
 // @author       Frank Lan
 // @match        https://www.google.com.au/*
@@ -15,7 +15,7 @@
     'use strict';
 
     const setNewTab = () => {
-        const selectors = [`body #search h3`, `body #search h3 > a`];
+        const selectors = [`body a:not([href=""]):not([target="_blank"])`];
         for (const selector of selectors) {
             for (const h3 of document.querySelectorAll(selector)) {
                 if (h3?.tagName === 'H3') {
